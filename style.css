@@ -6,6 +6,7 @@ body{
                          'section section section section'
                          'footer footer footer footer';
     grid-template-rows: 40vh 40vh 40vh 40vh;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 nav{
@@ -13,20 +14,84 @@ nav{
     background-color: blue;
 }
 
+nav #mobile{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav #desktop{
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav #desktop a{
+    text-decoration: none;
+    font-size: 20pt;
+    font-weight: 900;
+    color: black;
+}
+
 header{
     grid-area: header;
-    background-color: red;
+    background-image: url(img/4826.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1{
+    font-size: 40pt;
+    color: blue;
+    font-weight: 900;
 }
 
 section{
     grid-area: section;
     background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+}
+
+section p{
+    color: black;
+    font-size: 20pt;
 }
 
 footer{
     grid-area: footer;
     background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: 0center;
+    flex-direction: column;
 }
+
+footer aside{
+    display: none;
+}
+
+footer div{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+footer div a{
+    cursor: pointer;
+}
+
 
 @media(min-width: 768px){
     body{
@@ -34,6 +99,12 @@ footer{
                              'header header section section'
                              'header header section section'
                              'footer footer footer footer';
+    }
+    nav #desktop{
+        display: flex;
+    }
+    nav #mobile{
+        display: none;
     }
 }
 
@@ -44,4 +115,7 @@ footer{
                              'header header footer footer'
                              'header header footer footer';
     }
+    footer aside{
+        display: block;
+    } 
 }
